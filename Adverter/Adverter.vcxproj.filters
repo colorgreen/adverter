@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Menus">
+      <UniqueIdentifier>{73cb52b8-4921-4344-96fd-c34d23e1fb74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models">
+      <UniqueIdentifier>{7feaf6f0-9e23-46ce-ab1c-37f456d0972d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Database.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenu.h">
+      <Filter>Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="AdvertiserMenu.h">
+      <Filter>Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="PricelistMenu.h">
+      <Filter>Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="Advert.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="PricelistImporter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pricelist.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Serializer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Advertiser.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="DatabaseModel.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Adverter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Database.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="AdvertiserMenu.cpp">
+      <Filter>Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="PricelistMenu.cpp">
+      <Filter>Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="Advert.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="PricelistImporter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pricelist.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Serializer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Advertiser.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="DatabaseModel.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
