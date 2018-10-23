@@ -45,9 +45,11 @@ bool PricelistImporter::import(string name, string path)
 		period++;
 	}
 
-	cout << "Zaimportowano";
-
 	Database::getContext()->add(pricelist);
+
+	if (Pricelist::table.size() == 1)
+		Pricelist::currentPricelist = pricelist->getId();
+
 	Database::getContext()->save();
 
 	return true;

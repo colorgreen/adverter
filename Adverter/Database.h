@@ -1,9 +1,12 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <functional>
 #include "Pricelist.h"
 #include "Advertiser.h"
 #include "Serializer.h"
+
+using namespace std;
 
 class Database
 {
@@ -57,6 +60,32 @@ public:
 	void add(T* t)
 	{
 		T::table.push_back(t);
+	}
+
+	template<typename T>
+	vector<T*> where(function<bool(T*)>& condition )
+	{
+		vector<T*> v;
+		for (T* t : T::table)
+			if (condition(t))
+				v.push_back(t);
+		return v;
+	}
+
+	template<typename T>
+	auto all()
+	{
+		return T::table;
+	}
+
+	template<typename T>
+	T* single( function<bool(T*)>& condition)
+	{
+		vector<T*> v;
+		for (T* t : T::table)
+			if (condition(t))
+				return t;
+		return nullptr;
 	}
 
 	static Database* getContext();

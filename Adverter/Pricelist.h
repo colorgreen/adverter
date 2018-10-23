@@ -11,6 +11,8 @@ class Pricelist : public DatabaseModel
 public:
 	TABLE(Pricelist)
 
+	static int currentPricelist;
+
 	static const int _PERIODS = 336;
 	typedef double PERIODS[_PERIODS];
 	enum { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday };
@@ -24,6 +26,7 @@ public:
 	void setName(string name);
 	void setPrices(PERIODS prices);
 
+	int getId() { return id; }
 	auto getPrices() { return prices; }
 	string getName() { return name; }
 	double * getPricesForDay(int day) { return prices + day * 48; }

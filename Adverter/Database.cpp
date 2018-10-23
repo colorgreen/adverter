@@ -16,9 +16,11 @@ bool Database::load() const
 
 	file.read(Pricelist::newId);
 	file.read(Advertiser::newId);
-	cout << file.tellg() << endl;
+
+	file.read(Pricelist::currentPricelist);
 
 	loadTable<Pricelist>(file);
+	loadTable<Advertiser>(file);
 
 	file.close();
 	return true;
@@ -33,9 +35,11 @@ bool Database::save() const
 
 	file.write(Pricelist::newId);
 	file.write(Advertiser::newId);
-	cout << file.tellg() << endl;
+
+	file.write(Pricelist::currentPricelist);
 
 	saveTable<Pricelist>(file);
+	saveTable<Advertiser>(file);
 
 	file.close();
 	return true;

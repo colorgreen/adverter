@@ -11,3 +11,9 @@ Advertiser::Advertiser()
 Advertiser::~Advertiser()
 {
 }
+
+void Advertiser::setName(string name)
+{
+	this->name = name;
+}
+
