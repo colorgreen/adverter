@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "PricelistImporter.h"
+#include "Importer.h"
 #include <algorithm>
 #include <fstream>
 #include <sstream>
@@ -7,7 +7,7 @@
 #include "Database.h"
 
 
-bool PricelistImporter::import(string name, string path)
+bool Importer::importPricelist(string name, string path)
 {
 	ifstream file(path);
 
@@ -55,4 +55,25 @@ bool PricelistImporter::import(string name, string path)
 	return true;
 }
 
+bool Importer::importAdvertisers(string path)
+{
+	ifstream file(path);
+
+	if (!file)
+		return false;
+
+	string line;
+	while (!file.eof())
+	{
+		getline(file, line);
+
+		auto advertiser = Database::getContext()->newObject<Advertiser>();
+		advertiser->setName(line);
+
+		Database::getContext()->add(advertiser);
+	}
+
+	Database::getContext()->save();
+	return true;
+}
 

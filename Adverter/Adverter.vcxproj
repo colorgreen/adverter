@@ -160,9 +160,10 @@
     <ClInclude Include="Menu.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Pricelist.h" />
-    <ClInclude Include="PricelistImporter.h" />
+    <ClInclude Include="Importer.h" />
     <ClInclude Include="PricelistMenu.h" />
     <ClInclude Include="Serializer.h" />
+    <ClInclude Include="Util.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Advert.cpp" />
@@ -180,9 +181,10 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Pricelist.cpp" />
-    <ClCompile Include="PricelistImporter.cpp" />
+    <ClCompile Include="Importer.cpp" />
     <ClCompile Include="PricelistMenu.cpp" />
     <ClCompile Include="Serializer.cpp" />
+    <ClCompile Include="Util.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

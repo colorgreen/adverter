@@ -3,8 +3,9 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
-#include "PricelistImporter.h"
+#include "Importer.h"
 #include "Database.h"
+#include "Util.h"
 
 using namespace std;
 
@@ -15,7 +16,7 @@ PricelistMenu::PricelistMenu()
 		"2 - Edytuj cennik\n"
 		"3 - Importuj cennik\n"
 		"4 - Zmien aktualny cennik\n"
-		"q - Wyjscie\n";
+		"q - Wroc\n";
 }
 
 void PricelistMenu::handle(char c)
@@ -40,8 +41,8 @@ void PricelistMenu::import()
 	cout << "Podaj sciezke do pliku cennika (.csv)" << endl;
 	getline(cin, path);
 
-	PricelistImporter importer;
-	if (importer.import(name, path))
+	Importer importer;
+	if (importer.importPricelist(name, path))
 		cout << "Zaimportowano " << name << endl;
 	else cout << "Nie zaimportowano cennika!" << endl;
 }
@@ -82,10 +83,16 @@ void PricelistMenu::modify()
 	function<bool(Pricelist*)> f = [](Pricelist* p) { return p->getId() == p->getId(); };
 	auto pricelist = Database::getContext()->all<Pricelist>();
 
-	string time;
-	cout << *p << "\nPodaj godzine do edytowania (hh:mm)" << endl;
-	cin >> time;
+	cout << *p << endl;
+	int day = Util::input<int>("Podaj dzien tyg (1 - poniedzialek, ..., 7 - niedziela");
+	string time = Util::input<string>("Podaj godzine do edytowania");
+	double price = Util::input<double>("Podaj nowa cene");
 
+	int idx = getIndexFromPeriod(time);
+
+	p->getPricesForDay(day-1)[idx] = price;
+
+	cout << "Zaktualizowano cennik pomyslnie" << endl;
 
 	Database::getContext()->save();
 }
@@ -102,7 +109,7 @@ int PricelistMenu::getIndexFromPeriod(string period)
 {
 	int hh, mm;
 	stringstream ss;
-	ss << period.substr(0, 2) << period.substr(3, 5);
+	ss << period.substr(0, 2) << " " << period.substr(3, 5);
 	ss >> hh >> mm;
-	return hh * 2 + mm % 30;
+	return hh * 2 + mm / 30;
 }

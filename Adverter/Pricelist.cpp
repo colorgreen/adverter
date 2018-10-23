@@ -1,22 +1,12 @@
 #include "pch.h"
 #include "Pricelist.h"
-#include <iostream>
 
 REGISTER_STATICS(Pricelist)
 int Pricelist::currentPricelist;
 
-Pricelist::Pricelist()
-{
-}
-
 void Pricelist::setName(string name)
 {
 	this->name = name;
-}
-
-void Pricelist::setId(int id)
-{
-	this->id = id;
 }
 
 void Pricelist::setPrices(PERIODS prices)

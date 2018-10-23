@@ -17,8 +17,7 @@ class PricelistMenu : public Menu
 	int getIndexFromPeriod(string period);
 public:
 	PricelistMenu();
-	~PricelistMenu();
 
-	void handle(char c);
+	void handle(char c) override;
 };
 

@@ -13,12 +13,12 @@
 class DatabaseModel
 {
 protected:
+
 	int id;
 
 public:
 
-	void setId(int id)
-	{
-		this->id = id;
-	}
+	void setId(int id);
+
+	auto getId() const { return id; }
 };

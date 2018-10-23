@@ -2,6 +2,7 @@
 #include <fstream>
 #include "Pricelist.h"
 #include <iostream>
+#include "Advertiser.h"
 
 using namespace std;
 
@@ -36,6 +37,23 @@ public:
 	/////////////////////////////// SPECIALIZATIONS /////////////////////////////////////
 
 	template <>
+	Serializer& write(Advertiser & x)
+	{
+		write(x.id);
+		write(x.name);
+		return *this;
+
+	}
+
+	template <>
+	Serializer& read(Advertiser & x)
+	{
+		read(x.id);
+		read(x.name);
+		return *this;
+	}
+
+	template <>
 	Serializer& write(Pricelist & x)
 	{
 		write(x.id);
@@ -58,6 +76,7 @@ public:
 
 		x.setPrices(t);
 
+		delete[] t;
 		return *this;
 	}
 

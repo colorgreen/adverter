@@ -2,21 +2,25 @@
 #include "DatabaseModel.h"
 #include <iostream>
 #include <vector>
+#include <string>
 
 using namespace std;
 
-class Advertiser
+class Advertiser : public DatabaseModel
 {
-	string name;
 public:
 	TABLE(Advertiser)
 
-	Advertiser();
-	~Advertiser();
+	friend ostream& operator<<(ostream& output, const Advertiser& p);
 
 	void setName(string name);
 
-	string getName() { return name; }
+	auto getName() const { return name; }
+
+private:
+	friend class Serializer;
+
+	string name;
 };
 
 

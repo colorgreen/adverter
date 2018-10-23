@@ -22,8 +22,8 @@ void MainMenu::handle(char c)
 	
 	if( c == '1' )
 		menu = new PricelistMenu();
-//	if( c =='2' )
-//		menu = new AdvertiserMenu();
+	if( c =='2' )
+		menu = new AdvertiserMenu();
 
 	if( menu != nullptr )
 		return menu->run();
