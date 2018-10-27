@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <algorithm>
 #include <functional>
 #include "Pricelist.h"
 #include "Advertiser.h"
@@ -60,6 +61,17 @@ public:
 	void add(T* t)
 	{
 		T::table.push_back(t);
+	}
+
+	template<typename T>
+	void remove(T*t)
+	{
+		int i = 0;
+		for (;i < T::table.size(); i++)
+			if (T::table[i] == t)
+				break;
+		delete t;
+		T::table.erase(T::table.begin() + i);
 	}
 
 	template<typename T>

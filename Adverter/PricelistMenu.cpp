@@ -64,7 +64,7 @@ Pricelist * PricelistMenu::choosePricelist()
 	for (auto p : pricelists)
 		cout << i++ << " - " << p->getName() << endl;
 
-	cout << "\nWybierz cennik" << endl;
+	cout << "\nWybierz cennik (nr z listy)" << endl;
 	cin >> in;
 
 	if (in <= i)
