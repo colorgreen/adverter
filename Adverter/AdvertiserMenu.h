@@ -8,10 +8,9 @@ using namespace std;
 class AdvertiserMenu : public Menu
 {
 	void add();
-	void modify();
 	void remove();
 	void show();
-	void import();
+	void showDetails();
 
 	Advertiser * chooseAdvertiser();
 

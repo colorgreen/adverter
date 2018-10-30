@@ -39,9 +39,6 @@
     <ClInclude Include="PricelistMenu.h">
       <Filter>Menus</Filter>
     </ClInclude>
-    <ClInclude Include="Advert.h">
-      <Filter>Models</Filter>
-    </ClInclude>
     <ClInclude Include="Pricelist.h">
       <Filter>Models</Filter>
     </ClInclude>
@@ -59,6 +56,18 @@
     </ClInclude>
     <ClInclude Include="Importer.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spot.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Planner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DatabaseObjects.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AdvertsMenu.h">
+      <Filter>Menus</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -83,9 +92,6 @@
     <ClCompile Include="PricelistMenu.cpp">
       <Filter>Menus</Filter>
     </ClCompile>
-    <ClCompile Include="Advert.cpp">
-      <Filter>Models</Filter>
-    </ClCompile>
     <ClCompile Include="Pricelist.cpp">
       <Filter>Models</Filter>
     </ClCompile>
@@ -103,6 +109,18 @@
     </ClCompile>
     <ClCompile Include="Importer.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Spot.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Planner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DatabaseObjects.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AdvertsMenu.cpp">
+      <Filter>Menus</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -19,8 +19,11 @@ bool Database::load() const
 
 	file.read(Pricelist::currentPricelist);
 
-	loadTable<Pricelist>(file);
-	loadTable<Advertiser>(file);
+	file.read(Pricelist::table);
+	file.read(Advertiser::table);
+	file.read(Spot::table);
+
+	Pricelist::current = getContext()->get<Pricelist>().single(function<bool(Pricelist*)>([](Pricelist*p) { return p->getId() == Pricelist::currentPricelist; }));
 
 	file.close();
 	return true;
@@ -38,8 +41,9 @@ bool Database::save() const
 
 	file.write(Pricelist::currentPricelist);
 
-	saveTable<Pricelist>(file);
-	saveTable<Advertiser>(file);
+	file.write(Pricelist::table);
+	file.write(Advertiser::table);
+	file.write(Spot::table);
 
 	file.close();
 	return true;

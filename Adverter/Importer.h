@@ -8,6 +8,6 @@ class Importer
 public:
 	
 	bool importPricelist(string name, string path );
-	bool importAdvertisers( string path );
+	bool importSpotsOptimal( string path );
 };
 

@@ -5,6 +5,8 @@
 #include <sstream>
 #include "Pricelist.h"
 #include "Database.h"
+#include "Spot.h"
+#include "Planner.h"
 
 
 bool Importer::importPricelist(string name, string path)
@@ -21,8 +23,7 @@ bool Importer::importPricelist(string name, string path)
 	string line;
 	getline(file, line); // ignore first line (day names)
 
-	int period = 0;
-	while (!file.eof())
+	for( int period=0; period<48; period++)
 	{
 		getline(file, line);
 		replace(line.begin(), line.end(), ';', ' ');
@@ -41,39 +42,80 @@ bool Importer::importPricelist(string name, string path)
 		pricelist->getPricesForDay(4)[period] = d4;
 		pricelist->getPricesForDay(5)[period] = d5;
 		pricelist->getPricesForDay(6)[period] = d6;
+	}
 
-		period++;
+	for (int i = 5; i <= 60; i+=5)
+	{
+		getline(file, line);
+		replace(line.begin(), line.end(), ';', ' ');
+		replace(line.begin(), line.end(), ',', '.');
+
+		int duration;
+		double factor;
+
+		std::stringstream ss;
+		ss << line;
+		ss >> duration >> factor;
+
+		pricelist->setFactorForDurration(duration, factor);
 	}
 
 	Database::getContext()->add(pricelist);
 
 	if (Pricelist::table.size() == 1)
+	{
 		Pricelist::currentPricelist = pricelist->getId();
-
+		Pricelist::current = pricelist;
+	}
 	Database::getContext()->save();
 
 	return true;
 }
 
-bool Importer::importAdvertisers(string path)
+bool Importer::importSpotsOptimal(string path)
 {
+
 	ifstream file(path);
 
 	if (!file)
 		return false;
 
 	string line;
+	getline(file, line); // ignore first line (day names)
+
 	while (!file.eof())
 	{
-		getline(file, line);
+		if (line == "") break;
 
-		auto advertiser = Database::getContext()->newObject<Advertiser>();
-		advertiser->setName(line);
+		getline(file, line);
+		replace(line.begin(), line.end(), ' ', '/');
+		replace(line.begin(), line.end(), ';', ' ');
+
+		stringstream ss;
+		string name, days, timeOfDays;
+		int duration, spotsCount;
+
+		ss << line;
+		ss >> name >> duration >> days >> timeOfDays >> spotsCount;
+
+		replace(name.begin(), name.end(), '/', ' ');
+
+		Advertiser * advertiser = Database::getContext()->newObject<Advertiser>();
+		advertiser->setName(name);
+
+		Planner planner;
+		planner.setType(Planner::OPTIMAL);
+		planner.setAdvertiser(advertiser);
+		planner.setDays(days);
+		planner.setDuration(duration);
+		planner.setTimeOfDays(timeOfDays);
+		planner.setSpotsCount(spotsCount);
+
+		planner.plan();
+		planner.applySpots();
 
 		Database::getContext()->add(advertiser);
 	}
 
 	Database::getContext()->save();
-	return true;
 }
-

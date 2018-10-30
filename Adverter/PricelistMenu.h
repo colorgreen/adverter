@@ -14,8 +14,7 @@ class PricelistMenu : public Menu
 
 	Pricelist * choosePricelist();
 
-	int getIndexFromPeriod(string period);
-public:
+	public:
 	PricelistMenu();
 
 	void handle(char c) override;

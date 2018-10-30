@@ -23,31 +23,32 @@
     <ProjectGuid>{C2D86077-0EAC-480A-AE27-44641AF1967C}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Adverter</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -150,7 +151,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Advert.h" />
+    <ClInclude Include="AdvertsMenu.h" />
+    <ClInclude Include="DatabaseObjects.h" />
+    <ClInclude Include="Planner.h" />
+    <ClInclude Include="Spot.h" />
     <ClInclude Include="Advertiser.h" />
     <ClInclude Include="AdvertiserMenu.h" />
     <ClInclude Include="Database.h" />
@@ -165,7 +169,10 @@
     <ClInclude Include="Util.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Advert.cpp" />
+    <ClCompile Include="AdvertsMenu.cpp" />
+    <ClCompile Include="DatabaseObjects.cpp" />
+    <ClCompile Include="Planner.cpp" />
+    <ClCompile Include="Spot.cpp" />
     <ClCompile Include="Adverter.cpp" />
     <ClCompile Include="Advertiser.cpp" />
     <ClCompile Include="AdvertiserMenu.cpp" />

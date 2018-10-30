@@ -1,26 +1,29 @@
-e:\adverter\adverter\x64\debug\adverter.pch
-e:\adverter\adverter\x64\debug\vc140.pdb
-e:\adverter\adverter\x64\debug\vc140.idb
-e:\adverter\adverter\x64\debug\pch.obj
-e:\adverter\adverter\x64\debug\advert.obj
-e:\adverter\adverter\x64\debug\adverter.obj
-e:\adverter\adverter\x64\debug\advertiser.obj
-e:\adverter\adverter\x64\debug\advertisermenu.obj
-e:\adverter\adverter\x64\debug\database.obj
-e:\adverter\adverter\x64\debug\databasemodel.obj
-e:\adverter\adverter\x64\debug\mainmenu.obj
-e:\adverter\adverter\x64\debug\menu.obj
-e:\adverter\adverter\x64\debug\pricelist.obj
-e:\adverter\adverter\x64\debug\importer.obj
-e:\adverter\adverter\x64\debug\pricelistmenu.obj
-e:\adverter\adverter\x64\debug\serializer.obj
-e:\adverter\adverter\x64\debug\util.obj
-e:\adverter\x64\debug\adverter.ilk
-e:\adverter\x64\debug\adverter.exe
-e:\adverter\x64\debug\adverter.pdb
-e:\adverter\adverter\x64\debug\adverter.tlog\cl.command.1.tlog
-e:\adverter\adverter\x64\debug\adverter.tlog\cl.read.1.tlog
-e:\adverter\adverter\x64\debug\adverter.tlog\cl.write.1.tlog
-e:\adverter\adverter\x64\debug\adverter.tlog\link.command.1.tlog
-e:\adverter\adverter\x64\debug\adverter.tlog\link.read.1.tlog
-e:\adverter\adverter\x64\debug\adverter.tlog\link.write.1.tlog
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\adverter.pch
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\vc141.pdb
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\vc141.idb
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\pch.obj
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\util.obj
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\serializer.obj
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\pricelistmenu.obj
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\pricelist.obj
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\menu.obj
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\mainmenu.obj
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\databasemodel.obj
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\database.obj
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\advertisermenu.obj
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\advertiser.obj
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\adverter.obj
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\spot.obj
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\planner.obj
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\databaseobjects.obj
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\advertsmenu.obj
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\importer.obj
+c:\users\color\documents\visual studio 2015\projects\adverter\x64\debug\adverter.exe
+c:\users\color\documents\visual studio 2015\projects\adverter\x64\debug\adverter.ilk
+c:\users\color\documents\visual studio 2015\projects\adverter\x64\debug\adverter.pdb
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\adverter.tlog\cl.command.1.tlog
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\adverter.tlog\cl.read.1.tlog
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\adverter.tlog\cl.write.1.tlog
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\adverter.tlog\link.command.1.tlog
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\adverter.tlog\link.read.1.tlog
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\x64\debug\adverter.tlog\link.write.1.tlog

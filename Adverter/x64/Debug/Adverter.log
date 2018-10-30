@@ -1,26 +1,8 @@
-﻿  pch.cpp
-  Util.cpp
-  Serializer.cpp
-e:\adverter\adverter\serializer.h(86): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  PricelistMenu.cpp
-e:\adverter\adverter\serializer.h(86): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Importer.cpp
-e:\adverter\adverter\serializer.h(86): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Pricelist.cpp
-  Menu.cpp
-  MainMenu.cpp
-e:\adverter\adverter\serializer.h(86): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  DatabaseModel.cpp
-  Database.cpp
-e:\adverter\adverter\serializer.h(86): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-e:\adverter\adverter\database.h(23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  e:\adverter\adverter\database.cpp(41): note: see reference to function template instantiation 'void Database::saveTable<Pricelist>(Serializer &) const' being compiled
-  AdvertiserMenu.cpp
-e:\adverter\adverter\serializer.h(86): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Advertiser.cpp
-  Adverter.cpp
-e:\adverter\adverter\serializer.h(86): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Advert.cpp
-  Generating Code...
-  Adverter.vcxproj -> E:\adverter\x64\Debug\Adverter.exe
-  Adverter.vcxproj -> E:\adverter\x64\Debug\Adverter.pdb (Full PDB)
+﻿  Planner.cpp
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\serializer.h(120): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\planner.cpp(131): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\planner.cpp(157): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\databaseobjects.h(54): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  c:\users\color\documents\visual studio 2015\projects\adverter\adverter\planner.cpp(204): note: see reference to function template instantiation 'int DatabaseObjects<Spot *>::count<Spot*>(std::function<bool (Spot *)> &)' being compiled
+  c:\users\color\documents\visual studio 2015\projects\adverter\adverter\planner.cpp(204): note: see reference to function template instantiation 'int DatabaseObjects<Spot *>::count<Spot*>(std::function<bool (Spot *)> &)' being compiled
+  Adverter.vcxproj -> C:\Users\color\Documents\Visual Studio 2015\Projects\Adverter\x64\Debug\Adverter.exe

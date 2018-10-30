@@ -1,12 +1,14 @@
 #pragma once
 #include <fstream>
+#include "DatabaseObjects.h"
+
 #define TABLE(type) \
 	static int newId; \
-	static vector<type*> table;
+	static DatabaseObjects<type*> table;
 
 #define REGISTER_STATICS(type) \
 	int type::newId; \
-	std::vector<type*> type::table;
+	DatabaseObjects<type*> type::table;
 
 
 

@@ -55,9 +55,15 @@ void PricelistMenu::show()
 	cout << endl;
 }
 
-Pricelist * PricelistMenu::choosePricelist()
+Pricelist* PricelistMenu::choosePricelist()
 {
-	auto pricelists = Database::getContext()->all<Pricelist>();
+	auto pricelists = Database::getContext()->get<Pricelist>();
+
+	if( pricelists.size() == 0 )
+	{
+		cout << "Nie ma zadnych cennikow" << endl;
+		return nullptr;
+	}
 
 	cout << "Cenniki do wyboru" << endl;
 	int in, i = 1;
@@ -80,17 +86,20 @@ void PricelistMenu::modify()
 {
 	auto p = choosePricelist();
 
+	if (p == nullptr)
+		return;
+
 	function<bool(Pricelist*)> f = [](Pricelist* p) { return p->getId() == p->getId(); };
-	auto pricelist = Database::getContext()->all<Pricelist>();
+	auto pricelist = Database::getContext()->get<Pricelist>();
 
 	cout << *p << endl;
-	int day = Util::input<int>("Podaj dzien tyg (1 - poniedzialek, ..., 7 - niedziela");
-	string time = Util::input<string>("Podaj godzine do edytowania");
+	int day = Util::input<int>("Podaj dzien tyg ( 1 - pn, 2 - wt, 3 - sr, 4 - czw, 5 - pt, 6 - sob, 7 - ndz )");
+	string period = Util::input<string>("Podaj godzine do edytowania");
 	double price = Util::input<double>("Podaj nowa cene");
 
-	int idx = getIndexFromPeriod(time);
+	int idx = Util::getPeriodFromTimeString(period);
 
-	p->getPricesForDay(day-1)[idx] = price;
+	p->getPricesForDay(day - 1)[idx] = price;
 
 	cout << "Zaktualizowano cennik pomyslnie" << endl;
 
@@ -101,15 +110,16 @@ void PricelistMenu::changeCurrent()
 {
 	auto p = choosePricelist();
 
+	if (p == nullptr)
+		return;
+
 	Pricelist::currentPricelist = p->getId();
 	Database::getContext()->save();
-}
 
-int PricelistMenu::getIndexFromPeriod(string period)
-{
-	int hh, mm;
-	stringstream ss;
-	ss << period.substr(0, 2) << " " << period.substr(3, 5);
-	ss >> hh >> mm;
-	return hh * 2 + mm / 30;
+	Pricelist::current = Database::getContext()
+	                     ->get<Pricelist>()
+	                     .single(function<bool(Pricelist*)>([](Pricelist* p)
+	                     {
+		                     return p->getId() == Pricelist::currentPricelist;
+	                     }));
 }
