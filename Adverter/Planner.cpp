@@ -68,6 +68,9 @@ void Planner::planOptimal()
 						function<int(Spot*)>([](Spot* spot) { return spot->getDuration(); })
 					);
 
+						if (time + duration > 600)
+							cout << "Ed" << endl;
+
 					if (time + duration <= 600 )
 					{
 						Spot* spot = Database::getContext()->newObject<Spot>();

@@ -17,6 +17,11 @@ void Menu::run()
 		if (c == 'q')
 			return;
 		
-		handle(c);
+		try {
+			handle(c);
+		}
+		catch (exception * e) {
+			cout << "Zle format danych" << endl;
+		}
 	}
 }
