@@ -71,7 +71,7 @@ void Planner::planOptimal()
 						if (time + duration > 600)
 							cout << "Ed" << endl;
 
-					if (time + duration <= 600 )
+					if (time + duration <= 600 && leftSpots >= 0)
 					{
 						Spot* spot = Database::getContext()->newObject<Spot>();
 						spot->setDuration(duration);
@@ -87,6 +87,9 @@ void Planner::planOptimal()
 				}
 			}
 		}
+
+		if (prevSpotsLeftCount == leftSpots) 
+			int x = 5;
 	}
 }
 

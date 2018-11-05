@@ -13,6 +13,7 @@ AdvertsMenu::AdvertsMenu()
 		"2 - Pokaz zajetosc\n"
 		"3 - Pokaz w obszarze\n"
 		"4 - Importuj\n"
+		"5 - Wyczysc\n"
 		"q - Wroc\n";
 }
 
@@ -98,6 +99,15 @@ void AdvertsMenu::import()
 	else cout << "Nie zaimportowano!" << endl;
 }
 
+
+void AdvertsMenu::clear()
+{
+	for (Spot * a : Database::getContext()->get<Spot>())
+		delete a;
+	Spot::table.clear();
+	Database::getContext()->save();
+}
+
 void AdvertsMenu::handle(char c)
 {
 	if (c == '1')
@@ -108,4 +118,7 @@ void AdvertsMenu::handle(char c)
 		showPeriod();
 	if (c == '4')
 		import();
+	if (c == '5')
+		clear();
 }
+

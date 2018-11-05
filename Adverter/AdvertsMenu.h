@@ -10,6 +10,7 @@ class AdvertsMenu : public Menu
 	void showTimetable();
 	void showPeriod();
 	void import();
+	void clear();
 
 
 public:

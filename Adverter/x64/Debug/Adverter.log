@@ -1,8 +1,104 @@
-﻿  Planner.cpp
-c:\users\student\desktop\adverter\adverter\serializer.h(120): warning C4267: "inicjowanie": konwersja z "size_t" do "int", możliwa utrata danych
-c:\users\student\desktop\adverter\adverter\planner.cpp(134): warning C4244: "-=": konwersja z "double" do "int", możliwa utrata danych
-c:\users\student\desktop\adverter\adverter\planner.cpp(160): warning C4267: "=": konwersja z "size_t" do "int", możliwa utrata danych
-c:\users\student\desktop\adverter\adverter\databaseobjects.h(54): warning C4267: "return": konwersja z "size_t" do "int", możliwa utrata danych
-  c:\users\student\desktop\adverter\adverter\planner.cpp(207): note: zobacz odwołanie do funkcji szablon; wystąpienie „int DatabaseObjects<Spot *>::count<Spot*>(std::function<bool (Spot *)> &)” jest kompilowane
-  c:\users\student\desktop\adverter\adverter\planner.cpp(207): note: zobacz odwołanie do funkcji szablon; wystąpienie „int DatabaseObjects<Spot *>::count<Spot*>(std::function<bool (Spot *)> &)” jest kompilowane
-  Adverter.vcxproj -> C:\Users\student\Desktop\adverter\x64\Debug\Adverter.exe
+﻿  pch.cpp
+  AdvertsMenu.cpp
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\serializer.h(120): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\databaseobjects.h(59): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  c:\users\color\documents\visual studio 2015\projects\adverter\adverter\databaseobjects.h(58): note: while compiling class template member function 'int DatabaseObjects<Spot *>::count(void)'
+  c:\users\color\documents\visual studio 2015\projects\adverter\adverter\advertsmenu.cpp(85): note: see reference to function template instantiation 'int DatabaseObjects<Spot *>::count(void)' being compiled
+  c:\users\color\documents\visual studio 2015\projects\adverter\adverter\advertsmenu.cpp(23): note: see reference to class template instantiation 'DatabaseObjects<Spot *>' being compiled
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\databaseobjects.h(54): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  c:\users\color\documents\visual studio 2015\projects\adverter\adverter\advertsmenu.cpp(43): note: see reference to function template instantiation 'int DatabaseObjects<Spot *>::count<Spot*>(std::function<bool (Spot *)> &)' being compiled
+  c:\users\color\documents\visual studio 2015\projects\adverter\adverter\advertsmenu.cpp(43): note: see reference to function template instantiation 'int DatabaseObjects<Spot *>::count<Spot*>(std::function<bool (Spot *)> &)' being compiled
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\type_traits(16707566): warning C4244: 'return': conversion from 'double' to '_Rx', possible loss of data
+          with
+          [
+              _Rx=int
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\functional(16707566): note: see reference to function template instantiation '_Rx std::_Invoker_ret<_Rx,false>::_Call<_Callable&,_Ty>(_Callable &,_Ty &&)' being compiled
+          with
+          [
+              _Rx=int,
+              _Callable=AdvertsMenu::showPeriod::<lambda_cabc7bdfa5b0a3356fd3ab60076804da>,
+              _Ty=Spot *
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\functional(16707566): note: see reference to function template instantiation '_Rx std::_Invoker_ret<_Rx,false>::_Call<_Callable&,_Ty>(_Callable &,_Ty &&)' being compiled
+          with
+          [
+              _Rx=int,
+              _Callable=AdvertsMenu::showPeriod::<lambda_cabc7bdfa5b0a3356fd3ab60076804da>,
+              _Ty=Spot *
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\functional(15732480): note: while compiling class template member function '_Rx std::_Func_impl_no_alloc<AdvertsMenu::showPeriod::<lambda_cabc7bdfa5b0a3356fd3ab60076804da>,_Rx,Spot *>::_Do_call(Spot *&&)'
+          with
+          [
+              _Rx=int
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\functional(1061): note: see reference to class template instantiation 'std::_Func_impl_no_alloc<AdvertsMenu::showPeriod::<lambda_cabc7bdfa5b0a3356fd3ab60076804da>,_Ret,Spot *>' being compiled
+          with
+          [
+              _Ret=int
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\functional(1313): note: see reference to class template instantiation 'std::_Is_large<_Impl>' being compiled
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\functional(1502): note: see reference to function template instantiation 'void std::_Func_class<_Ret,Spot *>::_Reset<AdvertsMenu::showPeriod::<lambda_cabc7bdfa5b0a3356fd3ab60076804da>>(_Fx &&)' being compiled
+          with
+          [
+              _Ret=int,
+              _Fx=AdvertsMenu::showPeriod::<lambda_cabc7bdfa5b0a3356fd3ab60076804da>
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\functional(1502): note: see reference to function template instantiation 'void std::_Func_class<_Ret,Spot *>::_Reset<AdvertsMenu::showPeriod::<lambda_cabc7bdfa5b0a3356fd3ab60076804da>>(_Fx &&)' being compiled
+          with
+          [
+              _Ret=int,
+              _Fx=AdvertsMenu::showPeriod::<lambda_cabc7bdfa5b0a3356fd3ab60076804da>
+          ]
+  c:\users\color\documents\visual studio 2015\projects\adverter\adverter\advertsmenu.cpp(85): note: see reference to function template instantiation 'std::function<int (Spot *)>::function<AdvertsMenu::showPeriod::<lambda_cabc7bdfa5b0a3356fd3ab60076804da>,void>(_Fx)' being compiled
+          with
+          [
+              _Fx=AdvertsMenu::showPeriod::<lambda_cabc7bdfa5b0a3356fd3ab60076804da>
+          ]
+  c:\users\color\documents\visual studio 2015\projects\adverter\adverter\advertsmenu.cpp(85): note: see reference to function template instantiation 'std::function<int (Spot *)>::function<AdvertsMenu::showPeriod::<lambda_cabc7bdfa5b0a3356fd3ab60076804da>,void>(_Fx)' being compiled
+          with
+          [
+              _Fx=AdvertsMenu::showPeriod::<lambda_cabc7bdfa5b0a3356fd3ab60076804da>
+          ]
+  DatabaseObjects.cpp
+  Planner.cpp
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\serializer.h(120): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\planner.cpp(137): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\planner.cpp(163): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\databaseobjects.h(54): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  c:\users\color\documents\visual studio 2015\projects\adverter\adverter\planner.cpp(210): note: see reference to function template instantiation 'int DatabaseObjects<Spot *>::count<Spot*>(std::function<bool (Spot *)> &)' being compiled
+  c:\users\color\documents\visual studio 2015\projects\adverter\adverter\planner.cpp(210): note: see reference to function template instantiation 'int DatabaseObjects<Spot *>::count<Spot*>(std::function<bool (Spot *)> &)' being compiled
+  Spot.cpp
+  Adverter.cpp
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\serializer.h(120): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Advertiser.cpp
+  AdvertiserMenu.cpp
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\serializer.h(120): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\advertisermenu.cpp(51): warning C4244: 'initializing': conversion from 'SUMT' to 'int', possible loss of data
+          with
+          [
+              SUMT=double
+          ]
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\databaseobjects.h(54): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  c:\users\color\documents\visual studio 2015\projects\adverter\adverter\advertisermenu.cpp(67): note: see reference to function template instantiation 'int DatabaseObjects<Spot *>::count<Spot*>(std::function<bool (Spot *)> &)' being compiled
+  c:\users\color\documents\visual studio 2015\projects\adverter\adverter\advertisermenu.cpp(67): note: see reference to function template instantiation 'int DatabaseObjects<Spot *>::count<Spot*>(std::function<bool (Spot *)> &)' being compiled
+  Database.cpp
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\serializer.h(120): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\serializer.h(141): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  c:\users\color\documents\visual studio 2015\projects\adverter\adverter\database.cpp(44): note: see reference to function template instantiation 'Serializer &Serializer::write<Pricelist*>(DatabaseObjects<Pricelist *> &)' being compiled
+  DatabaseModel.cpp
+  MainMenu.cpp
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\serializer.h(120): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Menu.cpp
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\menu.cpp(23): warning C4101: 'e': unreferenced local variable
+  Pricelist.cpp
+  Importer.cpp
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\serializer.h(120): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  PricelistMenu.cpp
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\serializer.h(120): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Serializer.cpp
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\serializer.h(120): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Util.cpp
+  Generating Code...
+c:\users\color\documents\visual studio 2015\projects\adverter\adverter\importer.cpp(121): warning C4715: 'Importer::importSpotsOptimal': not all control paths return a value
+  Adverter.vcxproj -> C:\Users\color\Documents\Visual Studio 2015\Projects\adverter\x64\Debug\Adverter.exe
