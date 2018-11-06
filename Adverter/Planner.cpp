@@ -59,18 +59,17 @@ void Planner::planOptimal()
 
 				for (int period = startPeriod; period < endPeriod && leftSpots >= 0; period++)
 				{
-					double time = db->get<Spot>().where(
-						function<bool(Spot*)>([day, period](Spot* spot)
-						{
-							return spot->getDay() == day && spot->getPeriod() == period;
-						})
-					).sum(
-						function<int(Spot*)>([](Spot* spot) { return spot->getDuration(); })
-					);
+					function<bool(Spot*)> cond = [day, period](Spot* spot)
+					{
+						return spot->getDay() == day && spot->getPeriod() == period;
+					};
 
-				
+					function<int(Spot*)> ret = [](Spot* spot) { return spot->getDuration(); };
 
-					if (time + duration <= 600 && leftSpots >= 0)
+					double time = db->get<Spot>().where( cond ).sum( ret );
+					double time2 = spots.where(cond).sum(ret);
+
+					if (time + time2 + duration <= 600 && leftSpots >= 0)
 					{
 						Spot* spot = Database::getContext()->newObject<Spot>();
 						spot->setDuration(duration);
@@ -118,23 +117,15 @@ void Planner::planPriceTo()
 
 				for (int period = startPeriod; period < endPeriod && !budgetEnded; period++)
 				{
-					double time = db->get<Spot>().where(
-						function<bool(Spot*)>([day, period](Spot* spot)
+					function<bool(Spot*)> cond = [day, period](Spot* spot)
 					{
 						return spot->getDay() == day && spot->getPeriod() == period;
-					})
-						).sum(
-							function<int(Spot*)>([](Spot* spot) { return spot->getDuration(); })
-						);
+					};
 
-					double time2 = spots.where(
-						function<bool(Spot*)>([day, period](Spot* spot)
-					{
-						return spot->getDay() == day && spot->getPeriod() == period;
-					})
-						).sum(
-							function<int(Spot*)>([](Spot* spot) { return spot->getDuration(); })
-						);
+					function<int(Spot*)> ret = [](Spot* spot) { return spot->getDuration(); };
+
+					double time = db->get<Spot>().where(cond).sum( ret );
+					double time2 = spots.where( cond ).sum(ret);
 
 
 					if(budget - Pricelist::current->getPrice(duration, day, period) < 0)
