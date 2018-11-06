@@ -42,7 +42,7 @@ void Planner::planOptimal()
 
 	while (leftSpots >= 0)
 	{
-		if (prevSpotsLeftCount == leftSpots)
+		if (prevSpotsLeftCount == leftSpots && leftSpots <= 0)
 		{
 			cout << "\n\t\tNIE MO¯NA PRZYDZIELIC WSZYSTKICH SPOTOW, PONIEWAZ PLAN JEST ZBYT ZAJETY\n" << endl;
 			break;
@@ -68,8 +68,7 @@ void Planner::planOptimal()
 						function<int(Spot*)>([](Spot* spot) { return spot->getDuration(); })
 					);
 
-						if (time + duration > 600)
-							cout << "Ed" << endl;
+				
 
 					if (time + duration <= 600 && leftSpots >= 0)
 					{
@@ -87,9 +86,6 @@ void Planner::planOptimal()
 				}
 			}
 		}
-
-		if (prevSpotsLeftCount == leftSpots) 
-			int x = 5;
 	}
 }
 
@@ -100,8 +96,19 @@ void Planner::planPriceTo()
 
 	const auto db = Database::getContext();
 
+	int lastspots = -1;
+	int added = 0;
+
 	while( budget > 0 )
 	{
+		if (lastspots == added)
+		{
+			cout << "\n\t\tNIE MO¯NA PRZYDZIELIC WSZYSTKICH SPOTOW, PONIEWAZ PLAN JEST ZBYT ZAJETY\n" << endl;
+			break;
+		}
+
+		lastspots = added;
+
 		for (auto day : days)
 		{
 			for (auto timeOfDay : timeOfDays)
@@ -120,10 +127,20 @@ void Planner::planPriceTo()
 							function<int(Spot*)>([](Spot* spot) { return spot->getDuration(); })
 						);
 
+					double time2 = spots.where(
+						function<bool(Spot*)>([day, period](Spot* spot)
+					{
+						return spot->getDay() == day && spot->getPeriod() == period;
+					})
+						).sum(
+							function<int(Spot*)>([](Spot* spot) { return spot->getDuration(); })
+						);
+
+
 					if(budget - Pricelist::current->getPrice(duration, day, period) < 0)
 						return;
 
-					if (time + duration <= 600 && budget - Pricelist::current->getPrice(duration, day, period) > 0)
+					if (time + time2 + duration <= 600 && budget - Pricelist::current->getPrice(duration, day, period) > 0)
 					{
 						Spot* spot = Database::getContext()->newObject<Spot>();
 						spot->setDuration(duration);
@@ -135,6 +152,8 @@ void Planner::planPriceTo()
 						spots.push_back(spot);
 
 						budget -= spot->getPrice();
+
+						added++;
 					}
 				}
 			}
